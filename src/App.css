@@ -1,38 +1,102 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Unbounded&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Unbounded", cursive;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  overflow-x: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.wrapper__bg {
+  width: 100%;
   min-height: 100vh;
+  background: url(images/bg.jpg) no-repeat center center/cover;
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
+  color: #ffffff
+}
+
+.search-input {
+  background-color: rgba(255, 255, 255, 0.75);
+  width: 320px;
+  padding: 20px 15px;
+  border-radius: 10px;
+  border-style: 1px solid black;
+}
+
+.weather-group {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.city {
+  margin-top: 2rem;
+}
+
+.city,
+.temperature {
+  font-size: 3rem;
+}
+
+.box-container {
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: column;
+  gap: 25px;
+
 }
 
-.App-link {
-  color: #61dafb;
+.box {
+  margin-top: 2rem;
+  padding: 1rem;
+  border-radius: 12px;
+  background-color: rgba(54, 71, 71, 0.75);
+  width: 340px;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  gap: 10%;
+  transition: transform .2s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.box p {
+  margin-top: 10px;
+}
+
+.box__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5%;
+}
+
+.box:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 1040px) {
+  .wrapper__bg {
+    padding: 2rem 0;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .box,
+  .search-input {
+    max-width: 70vw;
+    flex-wrap: wrap;
+  }
+
+  .box-container {
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 }
