@@ -11,7 +11,7 @@ function App() {
 
   useEffect(() => {
     fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=2b64c9e0e5d3d2467eea76eaf5c6cf98&units=metric`,
+      `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid={Your API}&units=metric`,
     )
       .then((res) => {
         if (res.status === 200) {
